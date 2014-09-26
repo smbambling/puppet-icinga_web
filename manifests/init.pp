@@ -16,9 +16,9 @@
 class icinga_web (
   $manage_repos = true,
   $server_db_type = 'pqsql',
-  $db_user = 'icingaweb',
-  $db_password = 'icingaweb',
-  $db_name = 'icingaweb',
+  $db_user = 'icinga_web',
+  $db_password = 'icinga_web',
+  $db_name = 'icinga_web',
   $db_host = 'localhost',
   $db_port = '5432',
   $icinga_server_db_type = 'pgsql',
