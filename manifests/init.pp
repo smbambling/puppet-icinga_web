@@ -1,4 +1,5 @@
 # Install and Setup Icinga Web
+        default: { fail("${server_db_type} is not supported") }
 #
 # === Authors
 #
@@ -15,7 +16,7 @@
 
 class icinga_web (
   $manage_repos = true,
-  $server_db_type = 'pqsql',
+  $server_db_type = 'pgsql',
   $db_user = 'icinga_web',
   $db_password = 'icinga_web',
   $db_name = 'icinga_web',
