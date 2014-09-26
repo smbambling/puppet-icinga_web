@@ -6,7 +6,7 @@
 #
 # === Parameters
 #
-# If the Icinga 2 Yum Repository should be configured
+# If the Icinga Yum Repository should be configured
 # $manage_repos = true/false
 #
 # Which IDO backend should be used, I prefer PostgreSQL so its default :)
@@ -20,7 +20,13 @@ class icinga_web (
   $db_password = 'icingaweb',
   $db_name = 'icingaweb',
   $db_host = 'localhost',
-  $db_port = '5432'
+  $db_port = '5432',
+  $icinga_server_db_type = 'pgsql',
+  $icinga_db_user = 'icinga',
+  $icinga_db_password = 'icinga',
+  $icinga_db_name = 'icinga',
+  $icinga_db_host = 'localhost',
+  $icinga_db_port = '5432',
   ) {
 
   if $manage_repos == true {
