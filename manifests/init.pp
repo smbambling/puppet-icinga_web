@@ -74,7 +74,7 @@ class icinga_web (
     owner   => root,
     group   => root,
     mode    => '0644',
-    content => template('icinga/icinga_configs/databases.xml.erb'),
+    content => template('icinga_web/databases.xml.erb'),
     notify  => Exec['icinga clear cache'],
     require => [ Package['icinga-web'], Package["icinga-web-${db_backend}"] ],
   }
