@@ -58,8 +58,8 @@ class { 'icinga_web':
   icinga_server_db_type => 'pgsql',
   icinga_db_host        => 'localhost',
   icinga_db_port        => '5432',
-  icinga_db_name        => 'icinga_web',
-  icinga_db_user        => 'icinga_web',
-  icinga_db_password    => 'icinga_web, 
+  icinga_db_name        => 'icinga2_data',
+  icinga_db_user        => 'icinga2',
+  icinga_db_password    => 'password, 
 }
  
