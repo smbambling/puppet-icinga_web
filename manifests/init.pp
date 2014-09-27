@@ -111,8 +111,8 @@ class icinga_web (
 
   # Load the Icinga Web schema if not already loaded
   exec { 'icinga_web load schema':
-    command => "/usr/bin/sudo /sbin/runuser -l postgres -c 'psql -U ${db_user} -d ${db_name} < ${server_db_schema_path}'",
+    command => "/sbin/runuser -l postgres -c 'psql -U ${db_user} -d ${db_name} < ${server_db_schema_path}'",
     require => Package['icinga-web-pgsql'],
-    onlyif  => "/usr/bin/sudo /sbin/runuser -l postgres -c \"/usr/bin/psql -U ${db_user} -d ${db_name} -t -c \"SELECT version FROM nsm_db_version\"\" 2>&1 >/dev/null | grep -q \"does not exist\"",
+    onlyif  => "/sbin/runuser -l postgres -c '/usr/bin/psql -U ${db_user} -d ${db_name} -t -c \"SELECT version FROM nsm_db_version\"' 2>&1 >/dev/null | grep -q 'does not exist'",
   }
 }
