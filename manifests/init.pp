@@ -113,6 +113,6 @@ class icinga_web (
   exec { 'icinga_web load schema':
     command => "/sbin/runuser -l postgres -c 'psql -U ${db_user} -d ${db_name} < ${server_db_schema_path}'",
     require => Package['icinga-web-pgsql'],
-    onlyif  => "/sbin/runuser -l postgres -c '/usr/bin/psql -U ${db_user} -d ${db_name} -t -c \"SELECT version FROM nsm_db_version\"' 2>&1 >/dev/null | grep -q 'does not exist'",
+    onlyif  => "/sbin/runuser -l postgres -c '/usr/bin/psql -U ${db_user} -d ${db_name} -t -c \"SELECT version FROM nsm_db_version\"' | grep -q 'does not exist'",
   }
 }
